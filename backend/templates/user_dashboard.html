@@ -1,0 +1,24 @@
+<h2>User Dashboard</h2>
+<p>Welcome User</p>
+<button onclick="logout()">Logout</button>
+
+<h3>Assigned Vehicles</h3>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Name</th><th>Number</th>
+    </tr>
+    {% for v in vehicles %}
+    <tr>
+        <td>{{ v.id }}</td>
+        <td>{{ v.name }}</td>
+        <td>{{ v.number }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+function logout() {
+    localStorage.clear();
+    window.location.href = "/";
+}
+</script>
